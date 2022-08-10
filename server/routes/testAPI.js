@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var test_controller = require("../controllers/testController");
 
-router.get('/', function(req, res, next) {
-    res.send('API is working properly');
-});
+router.get('/', test_controller.artist_list);
 
 module.exports = router;
