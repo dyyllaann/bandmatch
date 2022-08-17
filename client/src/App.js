@@ -23,7 +23,7 @@ const App = () => {
         "x-api-key": "34ea052a82072d48",
       };
       await axios
-        .get("/event?token=353a1e08a4525850", { headers })
+        .get("/api/event?token=353a1e08a4525850", { headers })
         .then((response) => setLocalEvents(response.data));
     })();
 
@@ -32,7 +32,7 @@ const App = () => {
         "x-api-key": "34ea052a82072d48",
       };
       await axios
-        .get("/venue", { headers })
+        .get("/api/venue", { headers })
         .then((response) => setVenues(response.data));
     })();
   }, []);
