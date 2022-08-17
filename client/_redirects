@@ -1,2 +1,2 @@
-/api/*  https://mycityscene.com/rest/v2:splat  200
+/api/*  https://mycityscene.com/rest/v2/:splat  200
 
