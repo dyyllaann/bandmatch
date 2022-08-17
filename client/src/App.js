@@ -11,7 +11,9 @@ const App = () => {
 
   React.useEffect(() => {
     (async function fetchHeadliners() {
-      const res = await fetch("http://localhost:3030/testAPI");
+      const res = await fetch(
+				"https://bandmatch-server.herokuapp.com/testAPI"
+			);
       const data = await res.json();
       setHeadliners(data.artist_list);
     })();
