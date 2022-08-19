@@ -62,8 +62,8 @@ const Cards = ({ headliners, localEvents, venues }) => {
                   </h3>
                   <span className="associatedAct_description">
                     {
-                      (associatedAct.description)
-                        ? `${associatedAct.description.substring(0, 250)}...`
+                      (event.description)
+                        ? `${event.description.substring(0, 250)}...`
                         : 'No description'
                     }
                   </span>
