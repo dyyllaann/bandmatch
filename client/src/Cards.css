@@ -31,6 +31,7 @@ h4 {
 .artistCard {
   position: relative;
   cursor: pointer;
+  background-color: beige;
 }
 
 @media screen and (min-width: 600px) {

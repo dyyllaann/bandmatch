@@ -61,7 +61,11 @@ const Cards = ({ headliners, localEvents, venues }) => {
                     {associatedAct.name}
                   </h3>
                   <span className="associatedAct_description">
-                    Uptown funk gon' give it to ya.
+                    {
+                      (associatedAct.description)
+                        ? `${associatedAct.description.substring(0, 250)}...`
+                        : 'No description'
+                    }
                   </span>
                   <span className="associatedAct_event">{`${eventStart} @ ${
                     venue && venue.title
