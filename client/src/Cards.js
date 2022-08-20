@@ -29,6 +29,8 @@ const Cards = ({ headliners, localEvents, venues }) => {
 		</div>
 	));
 
+  console.log(localEvents)
+
 	return (
 		<div className="cardSection">
 			{cards}
@@ -56,29 +58,29 @@ const Cards = ({ headliners, localEvents, venues }) => {
               );
 
               return (
-                <div key={associatedAct.name} className="associatedAct">
-                  <h3 className="associatedAct_title">
-                    {associatedAct.name}
-                  </h3>
-                  <span className="associatedAct_description">
-                    {
-                      (event.description)
-                        ? `${event.description.substring(0, 250)}...`
-                        : 'No description'
-                    }
-                  </span>
-                  <span className="associatedAct_event">{`${eventStart} @ ${
-                    venue && venue.title
-                  }`}</span>
-                  <a
-                    href={associatedAct.event_link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span className="associatedAct_arrow">→</span>
-                  </a>
-                </div>
-              );
+								<div key={associatedAct.name} className="associatedAct">
+									<h3 className="associatedAct_title">{associatedAct.name}</h3>
+									<span className="associatedAct_description">
+										{event.description
+											? `${event.description
+													.replace(/<\/?[^>]+(>|$)/g, "")
+													.replace("&rsquo;", "'")
+													.replace("&nbsp;", " ")
+													.substring(0, 250)}...`
+											: "No description"}
+									</span>
+									<span className="associatedAct_event">{`${eventStart} @ ${
+										venue && venue.title
+									}`}</span>
+									<a
+										href={associatedAct.event_link}
+										target="_blank"
+										rel="noreferrer"
+									>
+										<span className="associatedAct_arrow">→</span>
+									</a>
+								</div>
+							);
             })
           ) : (
             <div className="associatedAct">
