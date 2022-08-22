@@ -29,8 +29,6 @@ const Cards = ({ headliners, localEvents, venues }) => {
 		</div>
 	));
 
-  console.log(localEvents)
-
 	return (
 		<div className="cardSection">
 			{cards}
