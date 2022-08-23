@@ -51,9 +51,9 @@ const Cards = ({ headliners, localEvents, venues }) => {
                 ({ id }) => id === event.venue_id
               );
               const eventStart = format(
-                new Date(event.start_at),
-                "E M/d, haaa"
-              );
+								new Date(event.start_at.replace(/ /g, "T")),
+								"E M/d, haaa"
+							);
 
               return (
 								<div key={associatedAct.name} className="associatedAct">
